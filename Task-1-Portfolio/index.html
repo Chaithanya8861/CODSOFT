@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Chaithanya | Creative Developer Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefefe;
+            color: #1f2937;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid #eef2ff;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4b5563;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 60px 0 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-badge {
+            background: #eef2ff;
+            color: #2563eb;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #3b82f6;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 32px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 280px;
+            background: linear-gradient(145deg, #eef2ff, #ede9fe);
+            border-radius: 48px;
+            padding: 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+            background-color: #eef2ff;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 48px;
+            color: #0f172a;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid #eef2ff;
+            border-radius: 60px;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            border-color: #c7d2fe;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-card i {
+            font-size: 24px;
+            color: #3b82f6;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+
+        .project-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid #eef2ff;
+            transition: transform 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 180px;
+            background: linear-gradient(135deg, #e0f2fe, #e9defa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: #3b82f6;
+        }
+
+        .project-info {
+            padding: 24px;
+        }
+
+        .project-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #4b5563;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .project-tech span {
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Resume + Contact Section */
+        .resume-contact {
+            background: #0f172a;
+            border-radius: 48px;
+            padding: 56px 48px;
+            margin: 40px 0;
+            color: white;
+        }
+
+        .flex-2col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+        }
+
+        .resume-box,
+        .contact-box {
+            flex: 1;
+        }
+
+        .resume-box h3,
+        .contact-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .btn-resume {
+            background: #3b82f6;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-resume:hover {
+            background: #2563eb;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1rem;
+            word-break: break-all;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #60a5fa;
+        }
+
+        .contact-item i {
+            width: 28px;
+            font-size: 1.3rem;
+            color: #60a5fa;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .social-links a {
+            background: #1e293b;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #eef2ff;
+            padding: 40px 0 32px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .resume-contact {
+                padding: 36px 24px;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">Chaithanya<span style="color:#3b82f6;">.</span></div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#resume-contact">Resume</a>
+                    <a href="#resume-contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Name/Logo and Profile Image -->
+        <div class="container" id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">✨ MCA Student · Creative Developer</div>
+                    <h1>Hi, I'm Chaithanya</h1>
+                    <h2>crafting engaging digital experiences & UI/UX magic</h2>
+                    <p>MCA student at St Aloysius College, BCA graduate from Vivekananda College Puttur. I blend code with creativity — building interactive web apps, quizzes, and utility platforms. Based in Mangalore, India.</p>
+                </div>
+                <div class="hero-image">
+                    <!-- ===== PROFILE IMAGE ===== -->
+                    <!-- Replace "profile.jpg" with your actual image file name (e.g., my-photo.png, chaithanya.jpeg) -->
+                    <!-- Supported formats: .jpg, .jpeg, .png, .webp -->
+                    <img src="profile.jpeg" alt="Chaithanya - Profile Photo" class="profile-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Chaithanya&background=3b82f6&color=fff&size=200&rounded=true&bold=true';">
+                    <p style="margin-top: 16px; font-weight: 500;">✨ Chaithanya | Creative Dev</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="container" id="skills">
+            <div class="section">
+                <div class="section-title">✨ creative <span>toolkit</span></div>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fab fa-html5"></i> HTML5/CSS3</div>
+                    <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-card"><i class="fas fa-database"></i> DBMS</div>
+                    <div class="skill-card"><i class="fas fa-paintbrush"></i> UI/UX Design</div>
+                    <div class="skill-card"><i class="fas fa-palette"></i> Art & Illustration</div>
+                    <div class="skill-card"><i class="fab fa-java"></i> Java</div>
+                    <div class="skill-card"><i class="fas fa-chalkboard"></i> Presentation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section with your real projects & live links -->
+        <div class="container" id="projects">
+            <div class="section">
+                <div class="section-title">📁 live <span>projects</span></div>
+                <div class="projects-grid">
+                    <!-- QuizMaster App -->
+                    <div class="project-card">
+                        <div class="project-img"><i class="fas fa-question-circle fa-3x"></i></div>
+                        <div class="project-info">
+                            <h3>QuizMaster App</h3>
+                            <p>Interactive quiz platform with real-time scoring, smooth UI, and dynamic questions. Firebase backend.</p>
+                            <div class="project-tech"><span>JavaScript</span><span>Firebase</span></div>
+                            <a href="https://quizmaster-801c1.web.app/" target="_blank" rel="noopener" class="project-link">Live Demo →</a>
+                        </div>
+                    </div>
+                    <!-- Water Tanker Delivery -->
+                    <div class="project-card">
+                        <div class="project-img"><i class="fas fa-truck-water fa-3x"></i></div>
+                        <div class="project-info">
+                            <h3>Water Tanker Delivery</h3>
+                            <p>Book verified water tankers in minutes. Real-time availability, transparent pricing, instant confirmation.</p>
+                            <div class="project-tech"><span>HTML/CSS/JS</span><span>GitHub Pages</span></div>
+                            <a href="https://chaithanya8861.github.io/watertank/" target="_blank" rel="noopener" class="project-link">Live Demo →</a>
+                        </div>
+                    </div>
+                    <!-- SketchBook Android App -->
+                    <div class="project-card">
+                        <div class="project-img"><i class="fas fa-paintbrush fa-3x"></i></div>
+                        <div class="project-info">
+                            <h3>SketchBook Android App</h3>
+                            <p>Android drawing app for creating sketches, digital paintings, and creative art on mobile devices.</p>
+                            <div class="project-tech"><span>Android</span><span>Java</span></div>
+                            <a href="https://github.com/Chaithanya8861/SketchBook-Android-App" target="_blank" rel="noopener" class="project-link">GitHub Repo →</a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Website (your existing portfolio) -->
+                    <div class="project-card">
+                        <div class="project-img"><i class="fas fa-globe fa-3x"></i></div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>Personal portfolio showcasing projects, hackathon experience & creative work. Fully responsive design.</p>
+                            <div class="project-tech"><span>HTML/CSS/JS</span></div>
+                            <a href="https://chaithanya8861.github.io/my-portfolio/" target="_blank" rel="noopener" class="project-link">Live Demo →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume + Contact Section (Resume download + Contact info) -->
+        <div class="container" id="resume-contact">
+            <div class="resume-contact">
+                <div class="flex-2col">
+                    <div class="resume-box">
+                        <h3>📄 Download Resume</h3>
+                        <p>Get my complete professional profile — education, technical skills, projects, hackathon achievements, and more in PDF format.</p>
+                        <!-- Resume link points to local Chaithanya_resume.pdf (place file in same folder) -->
+                        <a href="Chaithanya_resume.pdf" class="btn-resume" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
+                        <p style="font-size: 0.75rem; margin-top: 16px; opacity: 0.7;">📁 Resume file: Chaithanya_resume.pdf (same folder)</p>
+                    </div>
+                    <div class="contact-box">
+                        <h3>📬 Get in touch</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:chaithanya8861@gmail.com">chaithanya8861@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/chaithanya-094a71322" target="_blank" rel="noopener">linkedin.com/in/chaithanya</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/Chaithanya8861" target="_blank" rel="noopener">github.com/Chaithanya8861</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Mangalore, India</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Chaithanya8861" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/chaithanya-094a71322" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://youtube.com/@chaithanya_shettigar?si=9iiuWwdtPjJzzsw7" target="_blank" rel="noopener" aria-label="YouTube (Art Gallery)"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer with copyright -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Chaithanya — Creative Developer. Built with HTML/CSS for CodSoft Internship.</p>
+        </div>
+    </footer>
+
+    <!-- Optional micro script: just ensures external links open safely -->
+    <script>
+        // All external links already have rel="noopener". This is a safety plus.
+        (function() {
+            // If you ever want to add smooth scroll for anchor links (optional, but nice)
+            document.querySelectorAll('.nav-links a, .btn-resume[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#') && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
