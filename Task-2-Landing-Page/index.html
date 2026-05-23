@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CodSoft | Innovation & Leadership Community</title>
+    <!-- Google Fonts & Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ========== HEADER + LOGO (CodSoft brand) ========== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid #eef2ff;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            background: linear-gradient(145deg, #2563eb, #4f46e5);
+            width: 48px;
+            height: 48px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(37,99,235,0.3);
+        }
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo-text span {
+            color: #3b82f6;
+            background: none;
+            -webkit-background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334155;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        .btn-outline {
+            border: 1px solid #cbd5e1;
+            padding: 8px 22px;
+            border-radius: 40px;
+            background: white;
+            font-weight: 600;
+        }
+        .btn-outline:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 60px 0 50px;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-badge {
+            background: #eef2ff;
+            color: #2563eb;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        .hero-highlight {
+            color: #2563eb;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            display: inline-block;
+            box-shadow: 0 4px 10px -2px rgba(59,130,246,0.3);
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        .btn-secondary {
+            background: white;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .hero-image {
+            flex: 1;
+            min-width: 280px;
+            background: linear-gradient(145deg, #eef2ff, #ede9fe);
+            border-radius: 48px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+        }
+        .hero-image i {
+            font-size: 110px;
+            color: #3b82f6;
+            opacity: 0.9;
+        }
+
+        /* ========== ABOUT CODSOFT (from PDF content) ========== */
+        .about-section {
+            background: #f8fafc;
+            border-radius: 48px;
+            margin: 40px 0;
+            padding: 64px 48px;
+        }
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1.2;
+        }
+        .about-text h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        .about-text h2 i {
+            color: #3b82f6;
+            margin-right: 12px;
+        }
+        .about-text p {
+            color: #334155;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .pillar-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .pillar {
+            background: white;
+            border-radius: 60px;
+            padding: 8px 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .about-visual {
+            flex: 0.9;
+            background: white;
+            border-radius: 32px;
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.04);
+        }
+        .about-visual i {
+            font-size: 80px;
+            color: #4f46e5;
+        }
+
+        /* ========== SERVICES / WHAT WE OFFER (based on internship opportunities) ========== */
+        .services-section {
+            padding: 60px 0 30px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 56px;
+            color: #0f172a;
+        }
+        .section-title span {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .service-card {
+            flex: 1;
+            min-width: 260px;
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 36px 24px;
+            text-align: center;
+            transition: all 0.25s ease;
+            border: 1px solid #eef2ff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #c7d2fe;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+        .service-icon {
+            font-size: 52px;
+            color: #3b82f6;
+            margin-bottom: 24px;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .service-card p {
+            color: #475569;
+        }
+
+        /* ========== INTERNSHIP BENEFITS (certificate, placement, network) ========== */
+        .benefits-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 48px;
+            margin: 60px 0;
+            padding: 64px 48px;
+            color: white;
+        }
+        .benefits-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .benefit-item {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 32px 20px;
+            border-radius: 32px;
+            backdrop-filter: blur(2px);
+        }
+        .benefit-icon {
+            font-size: 48px;
+            color: #60a5fa;
+            margin-bottom: 20px;
+        }
+        .benefit-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .benefit-item p {
+            color: #cbd5e1;
+        }
+
+        /* ========== CONTACT & SOCIAL (from PDF footer) ========== */
+        .contact-section {
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 56px 48px;
+            margin: 40px 0 60px;
+            border: 1px solid #eef2ff;
+            box-shadow: 0 12px 30px -8px rgba(0,0,0,0.04);
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+        }
+        .contact-info-left {
+            flex: 1;
+        }
+        .contact-info-left h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+        .contact-item i {
+            width: 32px;
+            font-size: 1.4rem;
+            color: #3b82f6;
+        }
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            background: #f1f5f9;
+            width: 48px;
+            height: 48px;
+            border-radius: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #1e293b;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-3px);
+        }
+        .contact-form {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 32px;
+            padding: 32px;
+        }
+        .contact-form h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        .input-field {
+            margin-bottom: 18px;
+        }
+        .input-field input, .input-field textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 28px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+        .input-field textarea {
+            resize: vertical;
+        }
+        .btn-submit {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-submit:hover {
+            background: #2563eb;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            border-top: 1px solid #eef2ff;
+            padding: 40px 0 32px;
+            text-align: center;
+        }
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .about-section, .benefits-section, .contact-section {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header: CodSoft branding -->
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="logo-text">Cod<span>Soft</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">What we do</a>
+                <a href="#benefits">Internship</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="btn-outline">Join community</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <div class="container" id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">⚡ Vibrant community • Shared objectives</div>
+                <h1>Create opportunities, <span class="hero-highlight">lead & grow</span> with CodSoft</h1>
+                <p>We focus on leadership development, student engagement, learning, and fostering shared interests. Join a diverse community dedicated to driving positive change through mentorship and collaborative projects.</p>
+                <div class="btn-group">
+                    <a href="#services" class="btn-primary">Explore programs →</a>
+                    <a href="#contact" class="btn-secondary">Get in touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-users-viewfinder"></i>
+                <i class="fas fa-chalkboard-user" style="font-size: 70px; margin-left: 12px;"></i>
+                <p style="margin-top: 20px; font-weight: 500;">Leadership • Learning • Engagement</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About CodSoft section (Exactly from PDF: community, leadership, mentorship, objectives) -->
+    <div class="container" id="about">
+        <div class="about-section">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2><i class="fas fa-handshake"></i> About CodSoft</h2>
+                    <p>CodSoft is a vibrant and diverse community that brings together individuals with similar objectives and ultimate goals. Our main focus is on creating opportunities that span various areas, including leadership development, learning, student engagement, and fostering shared interests.</p>
+                    <p>We believe in the power of leadership and its ability to drive positive change. That's why we provide platforms and resources for our community members to develop their leadership skills. Through mentorship programs, workshops, and collaborative projects, we empower individuals to take on leadership roles and make a difference in their respective fields.</p>
+                    <div class="pillar-list">
+                        <span class="pillar"><i class="fas fa-graduation-cap"></i> Mentorship</span>
+                        <span class="pillar"><i class="fas fa-chalkboard"></i> Workshops</span>
+                        <span class="pillar"><i class="fas fa-project-diagram"></i> Collaborative projects</span>
+                        <span class="pillar"><i class="fas fa-rocket"></i> Leadership tracks</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <i class="fas fa-people-arrows"></i>
+                    <h3 style="margin: 20px 0 8px;">Global network</h3>
+                    <p>Students, developers, mentors — united to grow and innovate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services / What CodSoft provides (core pillars) -->
+    <div class="container" id="services">
+        <div class="services-section">
+            <div class="section-title">What <span>CodSoft</span> offers</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Dev Internship</h3>
+                    <p>Hands-on projects (portfolio, landing page, calculator) — real-world skills and GitHub collaboration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Leadership Programs</h3>
+                    <p>Empower yourself with soft skills, public speaking, and team management workshops.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Networking Events</h3>
+                    <p>Connect with industry experts, get placement support, and expand your circle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certification & Growth</h3>
+                    <p>Earn completion certificates, enhance your LinkedIn profile, and showcase work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internship benefits: Completion certificate, placement support, network opportunity (from PDF page 5) -->
+    <div class="container" id="benefits">
+        <div class="benefits-section">
+            <div class="benefits-title">✨ Internship advantages ✨</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-scroll"></i></div>
+                    <h4>Completion Certificate</h4>
+                    <p>Recognized credential after successful task completion — boost your portfolio.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                    <h4>Placement Support</h4>
+                    <p>Guidance, resources and industry connections to kickstart your career.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                    <h4>Network Opportunity</h4>
+                    <p>Join a vibrant community, collaborate on open source, and build lasting relationships.</p>
+                </div>
+            </div>
+            <div class="benefits-title" style="font-size: 1.3rem; margin-top: 40px; margin-bottom: 0;">#codsoft  #internship  #webdevelopment</div>
+        </div>
+    </div>
+
+    <!-- Contact & Social Section: email, website, social from PDF (page 15: www.codsoft.in, contact@codsoft.in, CodSoft) -->
+    <div class="container" id="contact">
+        <div class="contact-section">
+            <div class="contact-flex">
+                <div class="contact-info-left">
+                    <h3><i class="fas fa-envelope-open-text"></i> Get Social With Us</h3>
+                    <p style="margin-bottom: 16px; color: #334155;">Reach out, follow, and become part of the CodSoft journey. We’re active on social media and always happy to connect.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span><strong>Website:</strong> www.codsoft.in</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong> contact@codsoft.in</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span><strong>Global community</strong> — online & remote hubs</span>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h4>Join the community</h4>
+                    <form id="codsoftContactForm">
+                        <div class="input-field">
+                            <input type="text" placeholder="Full name" required>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" placeholder="Email address" required>
+                        </div>
+                        <div class="input-field">
+                            <textarea rows="3" placeholder="Tell us about your interests / internship inquiry"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <p style="font-size: 0.75rem; margin-top: 18px; color: #475569;">We’ll get back within 48h. Let’s grow together.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer with copyright + additional codsoft info -->
+<footer>
+    <div class="container">
+        <div class="footer-copyright">
+            © 2025 CodSoft — Empowering leaders, developers, and changemakers. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Simple form handling demo -->
+<script>
+    (function() {
+        const form = document.getElementById('codsoftContactForm');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for reaching out to CodSoft! Our team will contact you soon. Stay connected & keep growing.');
+                form.reset();
+            });
+        }
+    })();
+</script>
+</body>
+</html>
